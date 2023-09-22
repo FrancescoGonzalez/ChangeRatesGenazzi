@@ -1,0 +1,27 @@
+1) false, gli viene assognato un valore di base, di solito lo 0 o cose che lo rappresentano
+2) variabile locale??
+3) vero
+4) falso, appartiene all'istanza della classe
+5) vero
+6) vero
+7) falso, non ha nemmeno void
+8) vero
+9) ???
+
+--- Risposte ---
+1. Falso una variabile locale deve essere per forza inizializzata dal
+   programmatore.
+2. Falso, una variabile d’istanza condivide il ciclo di vita con l’oggetto in cui è
+   definita
+3. Vero.
+4. Falso una variabile d’istanza appartiene ad un oggetto istanziato dalla
+   classe in cui è dichiarata.
+5. Vero.
+6. Vero.
+7. Falso un costruttore è un metodo che non restituisce mai niente, infatti
+   non ha tipo di ritorno.
+8. Falso un costruttore viene detto di default, se viene inserito dal
+   compilatore. Inoltre non ha parametri.
+9. Falso un costruttore è un metodo speciale che ha la caratteristica di
+   essere invocato una ed una sola volta nel momento in cui si istanzia un
+   oggetto
