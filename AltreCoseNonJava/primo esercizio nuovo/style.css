@@ -1,0 +1,156 @@
+:root {
+    --primary-color: #4864e2;
+    --secondary-color: #c2caf0;
+    --tertiary-color: #7e8ab9;
+}
+
+a:hover, a:after, a::before, a:visited, a:active {
+    font-weight: 700;
+    opacity: 1;
+}
+
+a { 
+    text-decoration: unset;
+    color: #fff;
+    opacity: 0.9;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+}
+
+.flex-container:first-child {
+    margin-top: 100px;
+} 
+
+.flex-container h3 {
+    text-transform: uppercase;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    min-width: 1000px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    background-color: var(--primary-color);
+    text-align: center;
+    display: flex;
+    min-height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /*up right bottom left*/
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+nav {
+    display: none;
+    justify-content: center;
+    gap: 30px;
+}
+
+.default-color {
+    background-color: #fff;
+}
+
+.icon {
+    cursor: pointer;
+    position: relative;
+    right: 40px;
+}
+
+input[type="checkbox"]#open-subnav:checked + .icon + .subnav {
+    display: flex;
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    background: var(--tertiary-color);
+    left: 0;
+    height: 40px;
+    align-items: center;
+}
+
+input[type="checkbox"]#open-subnav {
+    opacity: 0;
+}
+
+.secondary-color {
+    background-color: var(--secondary-color);
+}
+
+footer {
+    background-color: var(--primary-color);
+    text-align: center;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.flex-container .content .img:last-child {
+    width: 300px;
+    height: 168px;
+}
+
+@media screen and (min-width: 768px) {
+
+    header {
+        background-color: var(--primary-color);
+        text-align: center;
+        display: flex;
+        min-height: 50px;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    nav {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .icon {
+        display: none;
+    }
+
+    .subnav {
+        display: none;
+    }
+
+    .content {
+        flex-direction: row;
+    }
+
+    .flex-container {
+        padding: 30px;
+    }
+
+    .flex-container h3 {
+        margin-bottom: 30px;
+    }
+
+    .content > div {
+        flex: 1 1 50%;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        
+    }
+}
