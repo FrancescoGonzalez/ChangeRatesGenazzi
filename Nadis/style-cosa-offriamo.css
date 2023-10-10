@@ -1,0 +1,21 @@
+main {
+    background-color: rgb(219, 206, 187);
+
+}
+
+.box-offerta {
+    background-color: rgb(194, 182, 165);
+}
+
+.speciale {
+    background-color: rgb(238, 205, 159);;
+}
+
+.content {
+    display: flex;
+    justify-content: space-around;
+}
+
+@media screen and (min-width: 768px) {
+    
+}

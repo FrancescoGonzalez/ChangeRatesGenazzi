@@ -34,6 +34,10 @@ nav a{
     opacity: 0.7;
 }
 
+.current {
+    opacity: 1;
+}
+
 nav a:hover {
     text-decoration: overline;
     opacity: 1;
@@ -52,11 +56,14 @@ a {
     color: white;
 }
 
+/*
 main {
     background-image: url("./images/logo.png");
     background-size: 390px;
     background-repeat: no-repeat;
+    background-position: 0px;
 }
+*/
 
 .box {
     text-align: center;
@@ -125,9 +132,5 @@ p {
         display: flex;
         flex-direction: row-reverse;
         justify-content: space-around;
-
-    }
-
-    .right, .left {
     }
 }
