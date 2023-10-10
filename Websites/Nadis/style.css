@@ -1,6 +1,7 @@
 :root {
     --primary-color: rgb(158, 20, 192);
     --secondary-color: rgb(214, 172, 224);
+    --tertiary-color: rgba(199, 199, 199, 0.9);
 }
 
 body {
@@ -44,7 +45,7 @@ input[type="checkbox"]#open-subnav:checked + .icon + nav {
     position: absolute;
     top: 150px;
     width: 100%;
-    background: rgb(202, 193, 201);
+    background: var(--tertiary-color);
     left: 0;
     height: auto;
     align-items: center;
