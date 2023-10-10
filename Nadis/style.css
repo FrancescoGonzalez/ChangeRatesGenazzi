@@ -20,22 +20,45 @@ header {
     
 }
 
-nav {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
+#open-submenu {
+    display: none;
+}
 
+#outer-nav {
+    display: none;
+}
+
+#subnav > nav{
+    display: none;
 }
 
 nav a{
-    color: white;
+    color: black;
     padding: 5px 0px;
     opacity: 0.7;
 }
 
+input[type="checkbox"]#open-subnav:checked + .icon + nav {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 150px;
+    width: 100%;
+    background: rgb(202, 193, 201);
+    left: 0;
+    height: auto;
+    align-items: center;
+    box-shadow: 0 8px 30px 0 rgba(72,100,226,.2);
+    padding: 30px 0px;
+}
+
+input[type="checkbox"]#open-subnav {
+    opacity: 0;
+}
+
 .current {
     opacity: 1;
+    text-decoration: underline;
 }
 
 nav a:hover {
@@ -56,25 +79,17 @@ a {
     color: white;
 }
 
-/*
-main {
-    background-image: url("./images/logo.png");
-    background-size: 390px;
-    background-repeat: no-repeat;
-    background-position: 0px;
-}
-*/
-
 .box {
     text-align: center;
+    padding: 10px;
 }
 
-.odd {
+.reverse, .odd {
     background-color: rgb(255, 230, 246);
 }
 
-#deise-gonzalez {
-    max-width: 300px;
+img.home-img {
+    max-width: 275px;
 }
 
 footer {
@@ -84,6 +99,7 @@ footer {
     width: 100%;
     bottom: 0;
     color: #fff;
+    padding: 10px 0;
 }
 
 p {
@@ -91,7 +107,7 @@ p {
 }
 
 @media screen and (min-width: 768px) {
-
+    
     header {
         background-color: var(--primary-color);
         display: flex;
@@ -103,34 +119,55 @@ p {
         
     }
     
-    nav {
+    #outer-nav {
         display: flex;
         flex-direction: row;
         text-align: center;
         justify-content: center;
-    
+        
     }
 
+    #subnav {
+        display: none;
+    }
+    
     nav a {
+        color: white;
         padding: 10px;
     }
+    
 
+    img.home-img {
+        min-width: 500px;
+    }
+    
     .box {
+        display: flex;
+        align-items: center;
         text-align: center;
-        justify-content: space-around;
-        padding: 50px;
+        justify-content: space-between;
+        padding: 0;
     }
     
-    .box .left{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-
-    }
-    
-    .box .right{
-        display: flex;
+    .box.reverse {
         flex-direction: row-reverse;
-        justify-content: space-around;
+    }
+
+    .h3-box {
+        font-size: 48px;
+    }
+
+    .p-box {
+        font-size: 24px;
+    }
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 30px;
+    }
+    footer {
+        padding: 30px;
     }
 }
