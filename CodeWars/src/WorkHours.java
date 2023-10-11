@@ -5,7 +5,7 @@ public class WorkHours {
     public static final double HOURS_TO_WORK = 8;
     public static final String SPLITTER = "-";
     public static void main(String[] args){
-        System.out.println(whenCanIExit(false, "7-32-52", "12-28-59", "13-16-27"));
+        System.out.println(whenCanIExit(false, "7-36-35", "12-26-49", "13-00-00"));
 
     }
     public static String whenCanIExit (boolean verification, String... hours){ // hours MUST BE an odd number
