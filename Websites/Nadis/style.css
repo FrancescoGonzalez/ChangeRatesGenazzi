@@ -107,6 +107,23 @@ p {
     margin: 20px 0px;
 }
 
+#contatto-main {
+    text-align: center;
+    padding: 10px
+}
+
+#recensione {
+    border-radius: 80px;
+    height: 75px;
+    border-color: var(--primary-color);
+    background-color: var(--secondary-color);
+}
+
+#recensione:hover {
+    border-color: yellow;
+    background-color: orange;
+}
+
 @media screen and (min-width: 768px) {
     
     header {
