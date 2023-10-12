@@ -7,45 +7,71 @@ import java.net.http.HttpResponse;
 
 public class RemoteCurrentServicePort {
 
-
-    private final URI remoteServiceBaseAddress;
     private final String apiKey;
 
-    public RemoteCurrentServicePort(URI remoteServiceBaseAddress, String apiKey) {
-        this.remoteServiceBaseAddress = remoteServiceBaseAddress;
+    public RemoteCurrentServicePort(String apiKey) {
         this.apiKey = apiKey;
     }
 
-    ConversionServiceResponse callConvertionService(String from, String to, double amount){
-        // guard condition
+    ConversionServiceResponse callConvertionService(String from, String to){
 
-        URI actualURI = buildActualURI(from,to, amount);
-        // ConversionServiceResponse response =  call(actualURI);
-        return null;//response;
+        URI actualURI = buildActualURI(from,to, true);
+        return call(actualURI, from, to);
     }
 
-    private URI buildActualURI(String from, String to, double amount){
-        // build actual url
+    ConversionServiceResponse callConvertionService(String currency){
 
-        return null;
+        URI actualURI = buildActualURI(currency, "", false);
+        return call(actualURI);
+    }
+
+    private URI buildActualURI(String from, String to, boolean convert) {
+        try {
+            String uri;
+            if (convert) {
+                uri = "http://data.fixer.io/api/latest?access_key=" + apiKey + "&symbols=" + from + "," + to;
+            } else {
+                uri = "http://data.fixer.io/api/symbols?access_key=" + apiKey;
+
+            }
+            return new URI(uri);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
 
         
     }
-    /*
+    private ConversionServiceResponse call(URI uri, String from, String to){
+        try {
+            HttpRequest request = HttpRequest.newBuilder(uri) //crea la richiesta
+                    .GET()
+                    .build();
+            HttpResponse<String> response = HttpClient.newBuilder() //gestisce e ritorna la risposta
+                    .build()
+                    .send(request, HttpResponse.BodyHandlers.ofString());
+
+            return new ConversionServiceResponse(response.body(), from, to);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
     private ConversionServiceResponse call(URI uri){
+        try {
+            HttpRequest request = HttpRequest.newBuilder(uri) //crea la richiesta
+                    .GET()
+                    .build();
+            HttpResponse<String> response = HttpClient.newBuilder() //gestisce e ritorna la risposta
+                    .build()
+                    .send(request, HttpResponse.BodyHandlers.ofString());
 
-       HttpRequest  request =  HttpRequest
-                .newBuilder(uri).GET().build();
-       HttpClient client =  HttpClient.newHttpClient();
-       client.send(request, Http
-
-       GUARDARE https://www.baeldung.com/java-9-http-client
-
+            return new ConversionServiceResponse(response.body());
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
-     */
 
 }
-
-
-class ConversionServiceResponse{}
